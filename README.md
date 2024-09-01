@@ -29,17 +29,22 @@ The value of a square is calculated as `t * (3 ^ p)`, and the sum of all the squ
 
 ## Options
 
---buildgraph
-    - this is used to build 'graph.txt' which is a DAG (graph) of all game states.
-    - You can use this to verify the code is correct, or take the graph for your own uses.
-    - the states are stored as an index. The states are encoded in base 3 (blank, naught, cross).
---playcross
-    - by Default the human player is playing Naughts (O). Use this flag to play Crosses.
+--buildgraph   
+- this is used to build 'graph.txt' which is a DAG (graph) of all game states.
+- You can use this to verify the code is correct, or take the graph for your own uses.
+- the states are stored as an index. The states are encoded in base 3 (blank, naught, cross).      
+
+--playcross   
+- by Default the human player is playing Naughts (O). Use this flag to play Crosses.   
+
 --twoplayer
-    - If you want two human players, use this flag.
+-  If you want two human players, use this flag.   
+
 --boteasy
-    - This bot will play random moves.
+-  This bot will play random moves.   
+
 --bothard
-    - This bot uses minimax to play the best moves it can.
+-  This bot uses minimax to play the best moves it can.    
+
 --optimallybad
-    - This bot uses minimax to play the worst moves possible. It will try its hardest to lose.
+-  This bot uses minimax to play the worst moves possible. It will try its hardest to lose.    
