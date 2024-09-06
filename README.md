@@ -4,11 +4,33 @@ I solve TicTacToe using the minimax algorithm.
 
 It looks through every game state and finds the best (or worst!) moves.
 
-Play the AI in the terminal <br> (By default you play as Naughts against the best AI).
+Play the AI in the terminal. Choose different AIs via the flags at the bottom.
 
-## Optimally Bad TicTacToe
+## AI
+
+## Random 
+
+It looks through the valid moves and picks one with a uniform random distribution.
+
+### Minimax
+
+Searches through all possible states in the game tree (numbers below). It finds the best move at each state by analysing the moves available and seeing if any are forcing a win/draw on the AI's turn and taking those, or forcing a draw/loss on its opponents turn and avoiding those.
+
+### MENACE
+
+The Matchbox Educable Noughts and Crosses Engine (MENACE) was originally a set of 287 matchboxes representing 'essentially distinct' game states and a lot of beads inside them representing moves that can me made in Naughts and Crosses (TicTacToe). Through playing, beads are added and removed from the matchboxes and the result is the overall system 'learning' to play better.
+
+I aimed to make an AI based off the original source. I based my design off the information in Donald Michie's 1963 paper (below) and a StandUpMaths video I saw many years ago that I felt like linking. However, I could not find the original 1961 paper which he references.
+
+Donald Michie 1963 simulating MENACE - https://gwern.net/doc/reinforcement-learning/model-free/1963-michie.pdf
+StandUpMaths MENACE Video - https://youtu.be/R9c-_neaxeU?si=XyUH6qdTKL-jTf3y
+
+
+### Optimally Bad TicTacToe
 
 Do you like winning? Then play against `optimallybad`! The TicTacToe bot that has searched through every possibility to make you win as often as possible :)
+
+This works through Minimax. It searches through the game tree to find losing moves instead of winning moves.
 
 ## Numbers
 
@@ -29,6 +51,8 @@ The value of a square is calculated as `t * (3 ^ p)`, and the sum of all the squ
 
 ## Options
 
+If you pick multiple opponents then one will be chosen for you.
+
 --buildgraph   
 - this is used to build 'graph.txt' which is a DAG (graph) of all game states.
 - You can use this to verify the code is correct, or take the graph for your own uses.
@@ -48,3 +72,6 @@ The value of a square is calculated as `t * (3 ^ p)`, and the sum of all the squ
 
 --optimallybad
 -  This bot uses minimax to play the worst moves possible. It will try its hardest to lose.    
+
+--menace
+-   Play as Crosses against a simulation of the Matchbox Educable Naughts And Crosses Engine (MENACE)
